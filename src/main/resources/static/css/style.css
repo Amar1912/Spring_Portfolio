@@ -7,6 +7,8 @@
    GLOBAL
 =========================== */
 
+
+
 *{
     margin:0;
     padding:0;
@@ -20,6 +22,7 @@ body{
     color:#ffffff;
     line-height:1.7;
 }
+
 
 /* ===========================
    NAVBAR
@@ -48,7 +51,7 @@ body{
 }
 
 .logo span{
-    color:#38bdf8;
+    color:#ff7a00;
 }
 
 .nav-links{
@@ -68,7 +71,7 @@ body{
 }
 
 .nav-links a:hover{
-    color:#38bdf8;
+    color:#ff7a00;
 }
 
 /* ===========================
@@ -92,7 +95,7 @@ body{
 }
 
 .hero-content h3{
-    color:#38bdf8;
+    color:#ff7a00;
     font-size:22px;
 }
 
@@ -124,7 +127,7 @@ body{
 .btn{
 
     text-decoration:none;
-    background:#38bdf8;
+    background:#ff7a00;
     color:#08111f;
 
     padding:14px 30px;
@@ -139,7 +142,7 @@ body{
 
     transform:translateY(-5px);
 
-    box-shadow:0 15px 25px rgba(56,189,248,.35);
+    box-shadow:0 15px 25px rgba(255,122,0,.35);
 
 }
 
@@ -147,14 +150,14 @@ body{
 
     background:transparent;
 
-    color:#38bdf8;
+    color:#ff7a00;
 
-    border:2px solid #38bdf8;
+    border:2px solid #ff7a00;
 }
 
 .btn-outline:hover{
 
-    background:#38bdf8;
+    background:#ff7a00;
 
     color:#08111f;
 }
@@ -180,7 +183,7 @@ body{
 
     border-radius:50%;
 
-    background:linear-gradient(135deg,#38bdf8,#2563eb);
+    background:linear-gradient(135deg,#ff7a00,#2563eb);
 
     display:flex;
     justify-content:center;
@@ -189,7 +192,7 @@ body{
     font-size:90px;
     font-weight:700;
 
-    box-shadow:0 20px 40px rgba(37,99,235,.45);
+    box-shadow:0 20px 40px rgba(255,122,0,.45);
 
 }
 
@@ -211,7 +214,7 @@ body{
 
     margin-bottom:45px;
 
-    color:#38bdf8;
+    color:#ff7a00;
 
 }
 
@@ -265,13 +268,13 @@ body{
 
     transform:translateY(-10px);
 
-    box-shadow:0 15px 35px rgba(56,189,248,.25);
+    box-shadow:0 15px 35px rgba(255,122,0,.25);
 
 }
 
 .card h3{
 
-    color:#38bdf8;
+    color:#ff7a00;
 
     margin-bottom:15px;
 
@@ -303,7 +306,7 @@ body{
 
     font-size:40px;
 
-    color:#38bdf8;
+    color:#ff7a00;
 
 }
 
@@ -373,7 +376,7 @@ body{
 
     border-radius:10px;
 
-    background:#38bdf8;
+    background:#ff7a00;
 
     color:#08111f;
 
@@ -391,7 +394,7 @@ body{
 
     transform:translateY(-4px);
 
-    box-shadow:0 15px 25px rgba(56,189,248,.35);
+    box-shadow:0 15px 25px rgba(255,122,0,.35);
 
 }
 
@@ -411,7 +414,7 @@ body{
 
 .contact-info h3{
 
-    color:#38bdf8;
+    color:#ff7a00;
 
     margin-bottom:15px;
 
@@ -433,7 +436,7 @@ body{
 
 .info h4{
 
-    color:#38bdf8;
+    color:#ff7a00;
 
     margin-bottom:5px;
 
@@ -485,13 +488,13 @@ body{
 
 .footer h2 span{
 
-    color:#38bdf8;
+    color:#ff7a00;
 
 }
 
 .footer h3{
 
-    color:#38bdf8;
+    color:#ff7a00;
 
     margin-bottom:20px;
 
@@ -527,7 +530,7 @@ body{
 
 .footer-links a:hover{
 
-    color:#38bdf8;
+    color:#ff7a00;
 
     padding-left:8px;
 
@@ -547,7 +550,7 @@ body{
 
     text-decoration:none;
 
-    color:#38bdf8;
+    color:#ff7a00;
 
     font-weight:600;
 
@@ -623,7 +626,7 @@ body{
 
 ::-webkit-scrollbar-thumb{
 
-    background:#38bdf8;
+    background:#ff7a00;
 
     border-radius:10px;
 
@@ -766,7 +769,7 @@ body{
 
     font-size:40px;
 
-    color:#38bdf8;
+    color:#ff7a00;
 
     margin-bottom:15px;
 
