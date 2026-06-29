@@ -18,6 +18,7 @@
     <!-- Thymeleaf CSS -->
     <link rel="stylesheet" th:href="@{/css/style.css}">
 
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
@@ -274,6 +275,8 @@
 
             </form>
 
+            <p id="successMsg" th:if="${success}" th:text="${success}"></p>
+
         </div>
 
         <!-- Right Side -->
@@ -406,6 +409,8 @@
     </div>
 
 </footer>
+
+<script th:src="@{/js/script.js}"></script>
 
 </body>
 
