@@ -1,17 +1,21 @@
 package com.amardhadbale.gmail.com.Portfolio.service;
+
+import com.amardhadbale.gmail.com.Portfolio.entity.Contact;
+import com.amardhadbale.gmail.com.Portfolio.repository.ContactRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ContactService {
 
-    public void saveContact(String name, String email, String subject, String message) {
+    private final ContactRepository contactRepository;
 
-        System.out.println("===== Contact Details =====");
-        System.out.println("Name: " + name);
-        System.out.println("Email: " + email);
-        System.out.println("Subject: " + subject);
-        System.out.println("Message: " + message);
-
+    public ContactService(ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
     }
 
+    public void saveContact(Contact contact) {
+
+        contactRepository.save(contact);
+
+    }
 }
