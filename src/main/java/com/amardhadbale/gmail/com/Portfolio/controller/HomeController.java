@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HomeController {
 
+
     private final ContactService contactService;
 
     public HomeController(ContactService contactService) {
@@ -22,9 +23,9 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping("/about")
-    public String about() {
-        return "about";
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin";
     }
 
     @PostMapping("/contact")

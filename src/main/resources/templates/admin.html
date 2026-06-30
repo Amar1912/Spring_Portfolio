@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+<body>
+
+<h1>Admin Page</h1>
+
+<div class="project-form">
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Add New Project</h2>
+
+            <form action="/admin/project/save"
+                  method="post"
+                  enctype="multipart/form-data">
+
+                <!-- Project Name -->
+                <label>Project Name</label>
+                <input
+                        type="text"
+                        name="projectName"
+                        placeholder="Enter Project Name"
+                        required>
+
+                <!-- Project Description -->
+                <label>Project Description</label>
+                <textarea
+                        name="projectDescription"
+                        rows="5"
+                        placeholder="Enter Project Description"
+                        required></textarea>
+
+                <!-- Technologies -->
+                <label>Technologies Used</label>
+                <input
+                        type="text"
+                        name="technologies"
+                        placeholder="Spring Boot, MySQL, Thymeleaf"
+                        required>
+
+                <!-- GitHub Link -->
+                <label>GitHub Link</label>
+                <input
+                        type="url"
+                        name="githubLink"
+                        placeholder="https://github.com/your-repo">
+
+                <!-- Live Demo Link -->
+                <label>Live Demo Link</label>
+                <input
+                        type="url"
+                        name="liveDemo"
+                        placeholder="https://yourwebsite.com">
+
+                <!-- Image Name (Temporary) -->
+                <label>Image Name</label>
+                <label>Project Image</label>
+                <input type="file" name="image" required>
+
+                <button type="submit">
+                    Save Project
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
