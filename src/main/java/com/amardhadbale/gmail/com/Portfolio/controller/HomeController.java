@@ -2,6 +2,8 @@ package com.amardhadbale.gmail.com.Portfolio.controller;
 
 import com.amardhadbale.gmail.com.Portfolio.entity.Contact;
 import com.amardhadbale.gmail.com.Portfolio.service.ContactService;
+import com.amardhadbale.gmail.com.Portfolio.service.ProjectService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HomeController {
 
+    @Autowired
+    private ProjectService projectService;
 
     private final ContactService contactService;
 
@@ -40,4 +44,5 @@ public class HomeController {
 
         return "home";
     }
+
 }
