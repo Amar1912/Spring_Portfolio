@@ -22,8 +22,13 @@ public class HomeController {
         this.contactService = contactService;
     }
 
-    @GetMapping({" ", "/", "/home"})
-    public String home() {
+    @GetMapping("/")
+    public String home(Model model) {
+
+        // Get all projects from the database
+        model.addAttribute("projects", projectService.getAllProjects());
+
+        // Open home.html
         return "home";
     }
 
@@ -44,5 +49,6 @@ public class HomeController {
 
         return "home";
     }
+
 
 }

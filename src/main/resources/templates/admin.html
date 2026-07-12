@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Admin</title>
+    <title>Admin Panel</title>
+
     <link rel="stylesheet" th:href="@{/css/admin.css}">
 </head>
+
 <body>
 
-<h1>Admin Page</h1>
+<h1>Admin Panel</h1>
+
+<!-- ===================================== -->
+<!-- ADD PROJECT FORM -->
+<!-- ===================================== -->
 
 <div class="project-form">
 
@@ -22,46 +29,57 @@
 
                 <!-- Project Name -->
                 <label>Project Name</label>
+
                 <input
                         type="text"
                         name="projectName"
                         placeholder="Enter Project Name"
                         required>
 
-                <!-- Project Description -->
+                <!-- Description -->
                 <label>Project Description</label>
+
                 <textarea
                         name="projectDescription"
                         rows="5"
                         placeholder="Enter Project Description"
-                        required></textarea>
+                        required>
+                </textarea>
 
-                <!-- Technologies -->
+                <!-- Technology -->
                 <label>Technologies Used</label>
+
                 <input
                         type="text"
                         name="technologies"
                         placeholder="Spring Boot, MySQL, Thymeleaf"
                         required>
 
-                <!-- GitHub Link -->
+                <!-- GitHub -->
                 <label>GitHub Link</label>
+
                 <input
                         type="url"
                         name="githubLink"
                         placeholder="https://github.com/your-repo">
 
-                <!-- Live Demo Link -->
+                <!-- Live Demo -->
                 <label>Live Demo Link</label>
+
                 <input
                         type="url"
                         name="liveDemo"
                         placeholder="https://yourwebsite.com">
 
-                <!-- Image Name (Temporary) -->
-                <label>Image Name</label>
+                <!-- Image -->
                 <label>Project Image</label>
-                <input type="file" name="image" required>
+
+                <input
+                        type="file"
+                        name="image"
+                        required>
+
+                <br><br>
 
                 <button type="submit">
                     Save Project
@@ -75,5 +93,114 @@
 
 </div>
 
+<hr>
+
+<!-- ===================================== -->
+<!-- ALL PROJECTS -->
+<!-- ===================================== -->
+
+<h2>All Projects</h2>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+
+    <thead>
+
+    <tr>
+
+        <th>Image</th>
+
+        <th>Project Name</th>
+
+        <th>Description</th>
+
+        <th>Technology</th>
+
+        <th>GitHub</th>
+
+        <th>Live Demo</th>
+
+        <th>Action</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <tr th:each="project : ${projects}">
+
+        <!-- Image -->
+        <td>
+
+            <img
+                    th:src="@{'/imgs/' + ${project.imageName}}"
+                    width="120"
+                    height="80">
+
+        </td>
+
+        <!-- Project Name -->
+        <td th:text="${project.projectName}"></td>
+
+        <!-- Description -->
+        <td th:text="${project.projectDescription}"></td>
+
+        <!-- Technology -->
+        <td th:text="${project.technologies}"></td>
+
+        <!-- GitHub -->
+        <td>
+
+            <a
+                    th:href="${project.githubLink}"
+                    target="_blank">
+
+                GitHub
+
+            </a>
+
+        </td>
+
+        <!-- Live Demo -->
+        <td>
+
+            <a
+                    th:href="${project.liveDemo}"
+                    target="_blank">
+
+                Live Demo
+
+            </a>
+
+        </td>
+
+        <!-- Edit Delete -->
+        <td>
+
+            <a
+                    th:href="@{'/admin/project/edit/' + ${project.id}}">
+
+                Edit
+
+            </a>
+
+            |
+
+            <a
+                    th:href="@{'/admin/project/delete/' + ${project.id}}">
+
+                Delete
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    </tbody>
+
+</table>
+
 </body>
+
 </html>

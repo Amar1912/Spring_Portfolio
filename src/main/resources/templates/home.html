@@ -182,51 +182,53 @@
 </section>
 
 <!-- ================= PROJECTS ================= -->
+<h1 style="text-align: center; padding: 30px">Projects</h1>
 
-<section id="projects" class="section">
+<div class="project">
+    <!-- One project card -->
+    <!-- th:each will repeat this entire card for every project in the database -->
+    <div class="card"
+         th:each="project : ${projects}">
 
-    <h2>Projects</h2>
+        <!-- Display project image -->
+        <!-- '/imgs/' is the folder inside static -->
+        <!-- project.imageName comes from the database -->
+        <!-- Example: /imgs/helmet.png -->
+        <img th:src="@{'/imgs/' + ${project.imageName}}"
+             alt="Project Image">
 
-    <div class="grid">
+        <!-- Display project name -->
+        <!-- Gets the value of projectName from the current Project object -->
+        <!-- Example: Smart Helmet -->
+        <h3 th:text="${project.projectName}"></h3>
 
-        <div class="card">
+        <!-- Display project description -->
+        <!-- Gets projectDescription from the database -->
+        <p th:text="${project.projectDescription}"></p>
 
+        <!-- Display technologies used -->
+        <!-- Example: Java, Spring Boot, MySQL -->
+        <p>
+            <strong>Technologies:</strong>
+            <span th:text="${project.technologies}"></span>
+        </p>
 
-            <h3>Portfolio Website</h3>
+        <div class="button-group">
 
-            <p>
-                Personal portfolio developed using
-                Spring Boot and Thymeleaf.
-            </p>
+            <a th:href="${project.githubLink}"
+               target="_blank">
+                GitHub
+            </a>
 
-        </div>
-
-        <div class="card">
-
-            <h3>Cab Booking System</h3>
-
-            <p>
-                Laravel-based booking management system
-                with Admin Panel.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Task Manager</h3>
-
-            <p>
-                REST API CRUD application developed using
-                Laravel and MySQL.
-            </p>
+            <a th:href="${project.liveDemo}"
+               target="_blank">
+                Live Demo
+            </a>
 
         </div>
 
     </div>
-
-</section>
-
+</div>
 <!-- ================= CONTACT ================= -->
 
 <!-- CONTACT SECTION -->
