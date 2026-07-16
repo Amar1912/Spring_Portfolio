@@ -66,7 +66,11 @@
         </p>
 
         <div class="buttons">
-            <a href="#projects" class="btn">View Projects</a>
+            <a th:href="@{/pdf/Amar_Dhadbale_Resume.pdf}"
+               class="btn"
+               target="_blank">
+                Download Resume
+            </a>
             <a href="#contact" class="btn btn-outline">Hire Me</a>
         </div>
 
@@ -76,7 +80,10 @@
 
         <!-- Replace with your image -->
         <div class="profile-circle">
-            AD
+
+            <img th:src="@{/imgs/profile.jpeg}"
+                 alt="Amar Dhadbale">
+
         </div>
 
     </div>
@@ -87,11 +94,11 @@
 
     <div class="about-images">
 
-        <img th:src="@{/images/about1.jpg}" alt="Image 1">
+        <img th:src="@{/imgs/about1.jpg}" alt="Image 1">
 
-        <img th:src="@{/images/about2.jpg}" alt="Image 2">
+        <img th:src="@{/imgs/about2.jpg}" alt="Image 2">
 
-        <img th:src="@{/images/about3.jpg}" alt="Image 3">
+        <img th:src="@{/imgs/about3.jpg}" alt="Image 3">
 
     </div>
 
@@ -128,52 +135,71 @@
 
     <div class="grid">
 
+        <!-- Frontend -->
         <div class="card">
+
             <h3>Frontend</h3>
 
-            <p>
-                HTML5 <br>
-                CSS3 <br>
-                JavaScript <br>
-                Bootstrap <br>
-                Thymeleaf
-            </p>
+            <div th:each="skill : ${skills}">
+
+                <p th:if="${skill.category == 'Frontend'}">
+
+                    <span th:text="${skill.skillName}"></span>
+
+                </p>
+
+            </div>
+
         </div>
 
+        <!-- Backend -->
         <div class="card">
 
             <h3>Backend</h3>
 
-            <p>
-                Java <br>
-                Spring Boot <br>
-                Laravel <br>
-                PHP
-            </p>
+            <div th:each="skill : ${skills}">
+
+                <p th:if="${skill.category == 'Backend'}">
+
+                    <span th:text="${skill.skillName}"></span>
+
+                </p>
+
+            </div>
 
         </div>
 
+        <!-- Database -->
         <div class="card">
 
             <h3>Database</h3>
 
-            <p>
-                PostgreSQL <br>
-                MySQL
-            </p>
+            <div th:each="skill : ${skills}">
+
+                <p th:if="${skill.category == 'Database'}">
+
+                    <span th:text="${skill.skillName}"></span>
+
+                </p>
+
+            </div>
 
         </div>
 
+        <!-- Tools -->
         <div class="card">
 
             <h3>Tools</h3>
 
-            <p>
-                Git <br>
-                GitHub <br>
-                IntelliJ IDEA <br>
-                VS Code
-            </p>
+            <div th:each="skill : ${skills}">
+
+                <p th:if="${skill.category == 'Tools'}">
+
+                    <span th:text="${skill.skillName}"></span>
+
+                </p>
+
+            </div>
 
         </div>
 
@@ -182,53 +208,44 @@
 </section>
 
 <!-- ================= PROJECTS ================= -->
-<h1 style="text-align: center; padding: 30px">Projects</h1>
+<section id="projects">
 
-<div class="project">
-    <!-- One project card -->
-    <!-- th:each will repeat this entire card for every project in the database -->
-    <div class="card"
-         th:each="project : ${projects}">
+    <h1 style="text-align: center; padding: 30px">Projects</h1>
 
-        <!-- Display project image -->
-        <!-- '/imgs/' is the folder inside static -->
-        <!-- project.imageName comes from the database -->
-        <!-- Example: /imgs/helmet.png -->
-        <img th:src="@{'/imgs/' + ${project.imageName}}"
-             alt="Project Image">
+    <div class="project">
 
-        <!-- Display project name -->
-        <!-- Gets the value of projectName from the current Project object -->
-        <!-- Example: Smart Helmet -->
-        <h3 th:text="${project.projectName}"></h3>
+        <div class="card"
+             th:each="project : ${projects}">
 
-        <!-- Display project description -->
-        <!-- Gets projectDescription from the database -->
-        <p th:text="${project.projectDescription}"></p>
+            <img th:src="@{'/imgs/' + ${project.imageName}}"
+                 alt="Project Image">
 
-        <!-- Display technologies used -->
-        <!-- Example: Java, Spring Boot, MySQL -->
-        <p>
-            <strong>Technologies:</strong>
-            <span th:text="${project.technologies}"></span>
-        </p>
+            <h3 th:text="${project.projectName}"></h3>
 
-        <div class="button-group">
+            <p th:text="${project.projectDescription}"></p>
 
-            <a th:href="${project.githubLink}"
-               target="_blank">
-                GitHub
-            </a>
+            <p>
+                <strong>Technologies:</strong>
+                <span th:text="${project.technologies}"></span>
+            </p>
 
-            <a th:href="${project.liveDemo}"
-               target="_blank">
-                Live Demo
-            </a>
+            <div class="button-group">
+
+                <a th:href="${project.githubLink}" target="_blank">
+                    GitHub
+                </a>
+
+                <a th:href="${project.liveDemo}" target="_blank">
+                    Live Demo
+                </a>
+
+            </div>
 
         </div>
 
     </div>
-</div>
+
+</section>
 <!-- ================= CONTACT ================= -->
 
 <!-- CONTACT SECTION -->

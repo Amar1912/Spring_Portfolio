@@ -21,12 +21,11 @@ public class ProjectController {
     // Open Admin Page
     // =========================
     @GetMapping
-    public String adminPage(Model model) {
+    public String projectPage(Model model) {
 
-        // Send all projects to admin.html
         model.addAttribute("projects", projectService.getAllProjects());
 
-        return "admin";
+        return "project";
     }
     /*
      * Open Edit Project Page
@@ -52,7 +51,7 @@ public class ProjectController {
 
         projectService.saveProject(project, image);
 
-        return "redirect:/admin/project";
+        return "redirect:/admin";
     }
     @GetMapping("/delete/{id}")
     public String deleteProject(@PathVariable Long id) {

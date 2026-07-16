@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>All Projects</h1>
+
+<a href="/admin">← Add New Project</a>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+  <tr>
+    <th>Image</th>
+    <th>Project Name</th>
+    <th>Description</th>
+    <th>Technology</th>
+    <th>GitHub</th>
+    <th>Live Demo</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <tr th:each="project : ${projects}">
+
+    <td>
+      <img th:src="@{'/imgs/' + ${project.imageName}}"
+           width="120" height="80">
+    </td>
+
+    <td th:text="${project.projectName}"></td>
+
+    <td th:text="${project.projectDescription}"></td>
+
+    <td th:text="${project.technologies}"></td>
+
+    <td>
+      <a th:href="${project.githubLink}" target="_blank">
+        GitHub
+      </a>
+    </td>
+
+    <td>
+      <a th:href="${project.liveDemo}" target="_blank">
+        Live Demo
+      </a>
+    </td>
+
+    <td>
+      <a th:href="@{'/admin/project/edit/' + ${project.id}}">
+        Edit
+      </a>
+      |
+      <a th:href="@{'/admin/project/delete/' + ${project.id}}">
+        Delete
+      </a>
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>
+
+</body>
+</html>

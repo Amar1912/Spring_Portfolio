@@ -92,114 +92,51 @@
     </div>
 
 </div>
+<hr>
+
+<br><br>
+
+<a href="/admin/project">
+    <button type="button">
+        View All Projects
+    </button>
+</a>
 
 <hr>
 
-<!-- ===================================== -->
-<!-- ALL PROJECTS -->
-<!-- ===================================== -->
+<br><br>
 
-<h2>All Projects</h2>
+<hr>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
+<h2>Add Skill</h2>
 
-    <thead>
+<form action="/admin/skill/save" method="post">
 
-    <tr>
+    <label>Category</label>
+    <select name="category" required>
+        <option value="">Select Category</option>
+        <option value="Frontend">Frontend</option>
+        <option value="Backend">Backend</option>
+        <option value="Database">Database</option>
+        <option value="Tools">Tools</option>
+    </select>
 
-        <th>Image</th>
+    <br><br>
 
-        <th>Project Name</th>
+    <label>Skill Name</label>
+    <input
+            type="text"
+            name="skillName"
+            placeholder="Enter Skill"
+            required>
 
-        <th>Description</th>
+    <br><br>
 
-        <th>Technology</th>
+    <button type="submit">
+        Save Skill
+    </button>
 
-        <th>GitHub</th>
-
-        <th>Live Demo</th>
-
-        <th>Action</th>
-
-    </tr>
-
-    </thead>
-
-    <tbody>
-
-    <tr th:each="project : ${projects}">
-
-        <!-- Image -->
-        <td>
-
-            <img
-                    th:src="@{'/imgs/' + ${project.imageName}}"
-                    width="120"
-                    height="80">
-
-        </td>
-
-        <!-- Project Name -->
-        <td th:text="${project.projectName}"></td>
-
-        <!-- Description -->
-        <td th:text="${project.projectDescription}"></td>
-
-        <!-- Technology -->
-        <td th:text="${project.technologies}"></td>
-
-        <!-- GitHub -->
-        <td>
-
-            <a
-                    th:href="${project.githubLink}"
-                    target="_blank">
-
-                GitHub
-
-            </a>
-
-        </td>
-
-        <!-- Live Demo -->
-        <td>
-
-            <a
-                    th:href="${project.liveDemo}"
-                    target="_blank">
-
-                Live Demo
-
-            </a>
-
-        </td>
-
-        <!-- Edit Delete -->
-        <td>
-
-            <a
-                    th:href="@{'/admin/project/edit/' + ${project.id}}">
-
-                Edit
-
-            </a>
-
-            |
-
-            <a
-                    th:href="@{'/admin/project/delete/' + ${project.id}}">
-
-                Delete
-
-            </a>
-
-        </td>
-
-    </tr>
-
-    </tbody>
-
-</table>
+</form>
 
 </body>
 
