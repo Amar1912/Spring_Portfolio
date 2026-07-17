@@ -20,3 +20,4 @@ public class SkillService {
         skillRepository.save(skill);
     }
 }
+//service page
